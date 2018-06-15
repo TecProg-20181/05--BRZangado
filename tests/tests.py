@@ -2,7 +2,7 @@ import unittest
 from diskspace import diskspace
 
 
-class bytes_to_readable_tests(unittest.TestCase):
+class BytesSizeTests(unittest.TestCase):
 
     def test_blocks_0(self):
         blocks = 0
