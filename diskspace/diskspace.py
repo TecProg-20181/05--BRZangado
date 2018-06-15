@@ -39,7 +39,6 @@ args = parser.parse_args()
 def subprocess_check_output(command):
     return subprocess.check_output(command.strip().split(' '))
 
-
 def bytes_to_readable(blocks):
     byts = blocks * 512
     readable_bytes = byts
@@ -121,6 +120,7 @@ def show_space_list(directory='.', depth=-1, order=True):
         file_tree[file_path]['size'] = file_size
 
     largest_size = 0
+
     for file_path in file_tree:
         file_tree_entry = file_tree[file_path]
         file_tree_entry['children'] = sorted(
@@ -137,7 +137,6 @@ def show_space_list(directory='.', depth=-1, order=True):
     print(' ' * max(0, largest_size - len('Size')) + 'Size   (%)  File')
     print_tree(file_tree, file_tree[abs_directory], abs_directory,
                largest_size, total_size)
-
 
 def main():
     if not args.all:
